@@ -66,7 +66,7 @@ class MoviesList extends PureComponent {
 
   }
 
-  pageDown = (fields) => {
+  pageDown = () => {
     if (this.state.page > 1) {
       this.setState({
         page: this.state.page - 1,
