@@ -89,8 +89,10 @@ class MoviesList extends PureComponent {
             this.state.searchMovies.map(movie => <Movie key={movie.id} movie={movie} />)
           }
         </MovieGrid>
-        <button onClick={this.pageDown}>-</button>Page<button onClick={this.pageUp}>+</button>
-        <h1>{this.state.page}</h1>
+        <PageButton onClick={this.pageDown}>-</PageButton>
+        <PageSpan>Page</PageSpan>
+        <PageButton onClick={this.pageUp}>+</PageButton>
+        <h2>{this.state.page}</h2>
       </div>
     );
   }
@@ -103,4 +105,21 @@ const MovieGrid = styled.div`
     padding: 1rem;
     grid-template-columns: repeat(6, 1fr);
     grid-row-gap: 1rem;
+`;
+
+const PageButton = styled.button`
+  margin: 5px 5px 0px 5px;
+  background-color: #111;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+`;
+
+const PageSpan = styled.span`
+  font-size: 16px;
+  font-weight: bold;
 `;

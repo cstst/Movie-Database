@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 export default class Search extends React.Component {
     state = {
@@ -18,11 +19,32 @@ export default class Search extends React.Component {
 
     render() {
       return (
-        <form>
-          <input name="term" type="text" value={this.state.term} onChange={this.handleChange} />
-          <button type="submit" onClick={this.onSubmit}>Search</button>
-        </form>
+        <SearchForm>
+          <SearchInput name="term" type="text" value={this.state.term} onChange={this.handleChange} />
+          <SearchButton type="submit" onClick={this.onSubmit}>Search</SearchButton>
+        </SearchForm>
       );
 
     }
 }
+
+const SearchForm = styled.form`
+  margin: 20px auto 10px auto;
+`;
+
+const SearchInput = styled.input`
+  margin: 5px;
+  padding: 7px 15px;
+`;
+
+const SearchButton = styled.button`
+  margin: 5px;
+  background-color: #111;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+`;
