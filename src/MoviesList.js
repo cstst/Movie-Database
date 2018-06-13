@@ -90,9 +90,8 @@ class MoviesList extends PureComponent {
           }
         </MovieGrid>
         <PageButton onClick={this.pageDown}>-</PageButton>
-        <PageSpan>Page</PageSpan>
+        <PageSpan>{this.state.page}</PageSpan>
         <PageButton onClick={this.pageUp}>+</PageButton>
-        <h2>{this.state.page}</h2>
       </div>
     );
   }
@@ -108,7 +107,7 @@ const MovieGrid = styled.div`
 `;
 
 const PageButton = styled.button`
-  margin: 5px 5px 0px 5px;
+  margin: 10px 15px 20px 15px;
   background-color: #111;
   border: none;
   color: white;
@@ -120,6 +119,8 @@ const PageButton = styled.button`
 `;
 
 const PageSpan = styled.span`
-  font-size: 16px;
+  font-size: 30px;
   font-weight: bold;
+  position: relative;
+  top: 5px;
 `;
